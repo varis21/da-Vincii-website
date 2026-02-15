@@ -1,0 +1,44 @@
+// 1. ข้อมูลผลงานและประวัติแบบเจาะลึก
+const projects = [
+    {
+        id: 1,
+        title: "Mona Lisa (โมนาลิซา)",
+        category: "Painting",
+        shortDesc: "ภาพวาดสีน้ำมันที่มีชื่อเสียงที่สุดในโลก",
+        fullDetail: "วาดขึ้นในช่วงปี ค.ศ. 1503–1506 ปัจจุบันจัดแสดงอยู่ที่พิพิธภัณฑ์ลูฟร์ ประเทศฝรั่งเศส โดดเด่นด้วยเทคนิค Sfumato ที่ทำให้ภาพดูนุ่มนวลและมีมิติ",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/405px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+    },
+    {
+        id: 2,
+        title: "The Last Supper (อาหารมื้อสุดท้าย)",
+        category: "Mural",
+        shortDesc: "ภาพเขียนฝาผนังสะท้อนเหตุการณ์สำคัญทางศาสนา",
+        fullDetail: "ภาพเขียนบนฝาผนังโบสถ์ซานตามารีอาเดลเลกราซีเอ เมืองมิลาน แสดงให้เห็นถึงอารมณ์ที่หลากหลายของเหล่าสาวกเมื่อพระเยซูทรงประกาศว่าหนึ่งในนั้นจะทรยศพระองค์",
+        image: "https://groundcontrolth.com/blogs/70"
+    }
+];
+
+// 2. ข้อมูลแกลเลอรี (สิ่งประดิษฐ์และบันทึก)
+const galleryImages = [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/450px-Da_Vinci_Vitruve_Luc_Viatour.jpg", // Vitruvian Man
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Leonardo_Design_for_a_Flying_Machine.jpg/400px-Leonardo_Design_for_a_Flying_Machine.jpg", // Flying Machine
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Leonardo_da_Vinci_-_Self-Portrait_-_WGA12798.jpg/400px-Leonardo_da_Vinci_-_Self-Portrait_-_WGA12798.jpg" // Self-portrait
+];
+
+// ฟังก์ชันแสดงผล (คงเดิมตามโครงสร้างที่คุณมีในรูป)
+function renderPortfolio() {
+    const grid = document.getElementById('portfolio-grid');
+    if(grid) {
+        grid.innerHTML = projects.map(p => `
+            <div class="card" onclick="openDetail(${p.id})">
+                <img src="${p.image}" alt="${p.title}">
+                <div class="card-body">
+                    <span>${p.category}</span>
+                    <h3>${p.title}</h3>
+                    <p>${p.shortDesc}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+}
+renderPortfolio();

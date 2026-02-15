@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Leonardo da Vinci</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+/* Header */
+header {
+  background: #1a1a1a;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+/* Layout */
+.container {
+  padding: 60px 8%;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 15px;
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.lightbox:target {
+  display: flex;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>แกลเลอรีผลงานของ Leonardo da Vinci</h1>
+  <p>คลิกที่ภาพเพื่อดูขนาดเต็ม</p>
+</header>
+
+<div class="container">
+  <div class="gallery-grid">
+
+    <a href="#img1" class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Mona_Lisa.jpg">
+      <h3>Mona Lisa (1503)</h3>
+    </a>
+
+    <a href="#img2" class="card">
+      <img src="Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg">
+      <h3>The Last Supper (1498)</h3>
+    </a>
+
+    <a href="#img3" class="card">
+      <img src="THE.jpg">
+      <h3>Vitruvian Man (1490)</h3>
+    </a>
+
+    <a href="#img4" class="card">
+      <img src="LADY.jpg">
+      <h3>Lady with an Ermine (1489)</h3>
+    </a>
+
+    <a href="#img5" class="card">
+      <img src="DT5656.jpg">
+      <h3>The Annunciation (1472)</h3>
+    </a>
+
+    
+
+  </div>
+</div>
+
+<!-- Lightbox Sections -->
+<div id="img1" class="lightbox">
+  <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Mona_Lisa.jpg"></a>
+</div>
+
+<div id="img2" class="lightbox">
+  <a href="#"><img src="Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg"></a>
+</div>
+
+<div id="img3" class="lightbox">
+  <a href="#"><img src="THE.jpg"></a>
+</div>
+
+<div id="img4" class="lightbox">
+  <a href="#"><img src="LADY.jpg"></a>
+</div>
+
+<div id="img5" class="lightbox">
+  <a href="#"><img src="DT5656.jpg"></a>
+</div>
+
+
+
+</body>
+</html>
